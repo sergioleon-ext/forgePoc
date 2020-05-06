@@ -47,7 +47,7 @@ router.post('/jobs', async (req, res, next) => {
         new JobSvfOutputPayload()
     ]);
     job.output.formats[0].type = 'svf';
-    job.output.formats[0].views = ['2d', '3d'];
+    job.output.formats[0].views = ['3d'];
     try {
         // Submit a translation job using [DerivativesApi](https://github.com/Autodesk-Forge/forge-api-nodejs-client/blob/master/docs/DerivativesApi.md#translate).
         await new DerivativesApi().translate(job, {}, req.oauth_client, req.oauth_token);
